@@ -47,7 +47,13 @@ function sortearAmigo(){
     //Obtener el nombre del amigo sorteado
     const amigoSorteado = amigos[indiceAleatorio];
 
+    //Eliminar el amigo sorteado del array
+    amigos.splice(indiceAleatorio,1);
+
     //Mostrar el resultado en el DOM
+    const listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.style.display ='none'; //ocultar la lista
+
     const resultado = document.getElementById('resultadoSorteo');
     resultado.innerHTML = `Amigo sorteado: <strong>${amigoSorteado}</strong>`;
 }
