@@ -28,7 +28,7 @@ function actualizarLista(){
      //Iterar sobre el array y agregar cada amigo a la lista
      amigos.forEach((amigo) =>{
         const nuevoElemento = document.createElement('li');
-        nuevoElemento.textContent = amigo;
+        nuevoElemento.textContent = `${amigo}😎`;
         listaAmigos.appendChild(nuevoElemento);
      });
      listaAmigos.style.display = 'block';
@@ -36,7 +36,7 @@ function actualizarLista(){
 
 /** Funcion para seleneccionar un amigo de forma aleatoria */
 function sortearAmigo(){
-    //Validar que haya amigos en el array
+    //Validar que haya amigos dentro del array
     if (amigos.length === 0){
         alert('No hay amigos en la lista para sortear.');
         return;
@@ -55,9 +55,25 @@ function sortearAmigo(){
     listaAmigos.style.display ='none'; //ocultar la lista
 
     const resultado = document.getElementById('resultadoSorteo');
-    resultado.innerHTML = `Amigo sorteado: <strong>${amigoSorteado}</strong>`;
+    resultado.innerHTML = `Amigo sorteado: <strong>${amigoSorteado}</strong>🎉`;
 }
 
+/** Funcion para Reiniciar el Sorteo */
+function reiniciarSorteo(){ 
+    //Vaciar el array de amigos
+    amigos.length = 0;
+
+    //Limpiar la lista de amigos en el DOM 
+    const listaAmigos = document.getElementById ('listaAmigos');
+    listaAmigos.innerHTML = '';
+    listaAmigos.style.display = 'none';
+
+    //Limpiar el resultado del sorteo
+    const resultado = document.getElementById('resultadoSorteo');
+    resultado.innerHTML = '';
+
+    alert('El sorteo ha sido reiniciado.');
+}
 
 
 
