@@ -1,11 +1,11 @@
 :root {
-    --color-primary: #A35C7A;
-    --color-secondary: #FBF5E5;
-    --color-tertiary: #C890A7;
+    --color-primary: #474E93;
+    --color-secondary: #F5EFE7;
+    --color-tertiary: #7E5CAD;
     --color-button: #7DB9B3;
-    --color-button-hover: #2ed3c2;
-    --color-text: #000000;
-    --color-white: #ffffff;
+    --color-button-hover: #474E93;
+    --color-text: hsl(0, 0%, 0%);
+    --color-white: #f3e6e6e4;
 }
 
 /* Estilos generales */
@@ -124,7 +124,7 @@ button {
 }
 
 .button-add:hover {
-    background-color: #eb2879;
+    background-color: #8b55d7;
 }
 
 /* Listas */
@@ -139,7 +139,7 @@ ul {
 .result-list {
     margin-bottom: 50px;
     margin-top: 20px;
-    color: #241adb;
+    color: #F93827;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -173,6 +173,7 @@ ul {
     background: var(--color-button-hover); 
 }
 
+
 .button-reset {
     display: inline-flex;
     align-items: center;
@@ -188,6 +189,10 @@ ul {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-reset img {
+    margin-right: 40px;
 }
 
 .button-reset:hover {
