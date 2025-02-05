@@ -22,14 +22,14 @@ amigoInput.addEventListener('input', function() {
     if (primerNombre !== '' && amigos.some(amigo => amigo.nombre.split(' ')[0].toLowerCase() === primerNombre)) {
       // Mostrar alerta y agregar clase error solo una vez para este primer nombre duplicado
       if (alertedFirstName !== primerNombre) {
-        alert("El primer nombre ya existe, ingrese un apellido.");
+        alert("El primer nombre ya existe, ingrese un apellido u otra identificacion.");
         alertedFirstName = primerNombre;
       }
       // Agregar un espacio al final (si aún no lo tiene) para permitir escribir el apellido
       if (!this.value.endsWith(' ')) {
         this.value = this.value + ' ';
       }
-      // Marcar el input con la clase error (por ejemplo, texto y borde en rojo)
+      // Marcar el input con la clase error
       this.classList.add('error');
     } else {
       // Si no hay duplicado, quitar la clase error y reiniciar la variable de alerta
@@ -37,8 +37,8 @@ amigoInput.addEventListener('input', function() {
       alertedFirstName = null;
     }
   } else if (partes.length > 1 && partes[1].length > 0) {
-    // Si ya se ha iniciado a escribir el apellido (al menos una letra después del espacio)
-    // Se quita la clase error para que el texto vuelva a verse normal (por ejemplo, negro)
+    // Si ya se ha iniciado a escribir el apellido
+    // Se quita la clase error para que el texto vuelva a verse de color negro
     this.classList.remove('error');
     alertedFirstName = null;
   }
@@ -56,24 +56,24 @@ function agregarAmigo() {
     return;
   }
 
-  // Validar que el nombre no sea demasiado largo (ejemplo: máximo 20 caracteres)
+  // Validar que el nombre no sea demasiado largo (máximo 20 caracteres)
   if (nombreCompleto.length > 20) {
     alert('El nombre es demasiado largo. Por favor, ingrese un nombre y apellido más corto.');
     return;
   }
 
-  // Validar que no se agregue un nombre similar (comparación sin distinguir mayúsculas/minúsculas)
+  // Validar que no se agregue un nombre similar al añadido a la lista
   if (amigos.some(amigo => amigo.nombre.toLowerCase() === nombreCompleto.toLowerCase())) {
     alert('Este nombre ya existe en la lista.');
     return;
   }
 
-  // Array de emojis disponibles
+  // Array de emojis
   const emojis = ['😎','✌️','🌞','😁','😜','🥸','👽','👾','🦄','🎈','🍄','🌚'];
   // Generar un emoji aleatorio
   const emojiAleatorio = emojis[Math.floor(Math.random() * emojis.length)];
 
-  // Agregar el amigo (como objeto con nombre y emoji) al array
+  // Agregar el amigo al array
   amigos.push({ nombre: nombreCompleto, emoji: emojiAleatorio });
 
   // Actualizar la lista en el DOM
@@ -86,8 +86,8 @@ function agregarAmigo() {
 /** Función para actualizar la lista de amigos en el DOM */
 function actualizarLista() {
     const listaAmigos = document.getElementById('listaAmigos');
-    listaAmigos.innerHTML = ''; // Limpiar la lista existente
-  
+    listaAmigos.innerHTML = ''; 
+
     // Iterar sobre el array de amigos y agregar cada uno a la lista
     amigos.forEach((amigo, index) => {
       // Crear el elemento de la lista
@@ -96,7 +96,7 @@ function actualizarLista() {
       li.style.alignItems = 'center';
       li.style.marginBottom = '5px';
   
-      // Crear el ícono de la cruz para eliminar (ahora a la izquierda)
+      // Crear el ícono de la cruz para eliminar nombre de la lista
       const crossIcon = document.createElement('span');
       crossIcon.textContent = 'x';
       crossIcon.style.cursor = 'pointer';
@@ -113,11 +113,9 @@ function actualizarLista() {
       const span = document.createElement('span');
       span.textContent = `${amigo.nombre} ${amigo.emoji}`;
   
-      // Agregar primero la cruz y luego el span al elemento li
       li.appendChild(crossIcon);
       li.appendChild(span);
-  
-      // Agregar el li a la lista
+
       listaAmigos.appendChild(li);
     });
     listaAmigos.style.display = 'block';
@@ -139,7 +137,7 @@ function sortearAmigo() {
   const listaAmigos = document.getElementById('listaAmigos');
   listaAmigos.style.display = 'none';
 
-  // Mostrar el resultado del sorteo (nombre y emoji)
+  // Mostrar el resultado del sorteo
   const resultado = document.getElementById('resultadoSorteo');
   resultado.innerHTML = `Amigo sorteado: <strong>${amigoSorteado.nombre} ${amigoSorteado.emoji}</strong> 🎉`;
 }

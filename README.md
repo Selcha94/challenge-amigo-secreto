@@ -34,8 +34,7 @@ Esta aplicación web te permite registrar una lista de amigos, y luego seleccion
 
 ## Mejoras futuras
 
-* Posibilidad de eliminar amigos de la lista.
-
 * Persistencia de la lista utilizando almacenamiento local.
 
 * Mejoras en el diseño y estética.
+
