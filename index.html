@@ -1,46 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Special+Elite&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
     <title>Amigo Secreto</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <main class="main-content">
-        <header class="header-banner">
-            <h1 class="main-title">Amigo Secreto</h1>
-            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
-        </header>
-        
-        <section class="input-section">
-            <h2 class="section-title">Digite el nombre de sus amigos</h2>
-            <div class="input-wrapper">
-                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre" maxlength="20">
-                <button class="button-add" onclick="agregarAmigo()">Añadir</button>
-            </div>
-           
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+      <header class="header-banner">
+        <h1 class="main-title">Amigo Secreto</h1>
+        <img
+          src="assets/amigo-secreto.png"
+          alt="Imagen representativa de amigo secreto"
+        />
+      </header>
 
-            <div id="resultadoSorteo" class="result-list" aria-live="polite"></div>
+      <section class="input-section">
+        <h2 class="section-title">Digite el nombre de sus amigos</h2>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            id="amigo"
+            class="input-name"
+            placeholder="Escribe un nombre"
+            maxlength="20"
+          />
+          <button class="button-add" onclick="agregarAmigo()">Añadir</button>
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+        <ul
+          id="listaAmigos"
+          class="name-list"
+          aria-labelledby="listaAmigos"
+          role="list"
+        ></ul>
 
-            <div class="button-container">
-                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
-                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
-                    Sortear amigo
-                </button>
-                <button class="button-reset" onclick="reiniciarSorteo()" aria-label="Reiniciar Sorteo">
-                    <img src="assets/play_circle_outline.png" alt="Ícono para reiniciar">
-                    Reiniciar Sorteo
-                </button>
-            </div>
-        </section>
+        <div id="resultadoSorteo" class="result-list" aria-live="polite"></div>
+
+        <div class="button-container">
+          <button
+            class="button-draw"
+            onclick="sortearAmigo()"
+            aria-label="Sortear amigo secreto"
+            disabled
+          >
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Sortear amigo
+          </button>
+          <button
+            class="button-reset"
+            onclick="reiniciarSorteo()"
+            id="reiniciarButton"
+            aria-label="Reiniciar Sorteo"
+            disabled
+          >
+            <i class="fa-solid fa-rotate-right"></i>
+            Reiniciar Sorteo
+          </button>
+        </div>
+      </section>
     </main>
 
     <script src="app.js" defer></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
 </html>
