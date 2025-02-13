@@ -30,7 +30,7 @@ body {
   width: 100%;
 }
 
-/* Clase para indicar error en el input */
+/* Error en el input */
 input.error {
   border-color: red;
   caret-color: red;
@@ -50,7 +50,7 @@ input.error {
 .input-section {
   flex: 60%;
   background-color: var(--color-secondary);
-  border: 1px solid #000000;
+  border: 1px solid #000;
   border-radius: 64px 64px 0 0;
   display: flex;
   flex-direction: column;
@@ -64,16 +64,12 @@ input.error {
   font-family: "Special Elite", serif;
   font-size: 50px;
   font-weight: 400;
-  font-style: normal;
   color: var(--color-white);
 }
 
 .section-title {
   font-family: "Handjet", serif;
-  font-optical-sizing: auto;
   font-weight: 500;
-  font-style: normal;
-  font-variation-settings: "ELGR" 1, "ELSH" 2;
   font-size: 40px;
   color: var(--color-primary);
   margin: 10px 0;
@@ -102,6 +98,7 @@ input.error {
   font-size: 14px;
   margin-top: 5px;
 }
+
 .button-container {
   display: flex;
   justify-content: space-between;
@@ -109,19 +106,30 @@ input.error {
   margin-top: 20px;
 }
 
-/* Estilos de entrada de texto */
-.input-title {
-  flex: 1;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 2px solid #333;
-  border-right: none;
-  border-radius: 25px 0 0 25px;
-  font-family: "Merriweather", serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+/* Estilos para la lista de amigos */
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Estilos de botón */
+.delete-icon {
+  cursor: pointer;
+  margin-right: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+.name-text {
+  font-family: "Handjet", serif;
+  font-size: 24px;
+  color: #000;
+}
+
+/* Estilos de botones */
 button {
   padding: 15px 30px;
   font-family: "Inter", sans-serif;
@@ -130,6 +138,8 @@ button {
   border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button-add {
@@ -143,7 +153,7 @@ button {
 }
 
 /* Listas */
-ul {
+.name-list {
   list-style-type: none;
   color: var(--color-text);
   font-family: "Inter", sans-serif;
@@ -151,21 +161,23 @@ ul {
   margin: 20px 0;
 }
 
+/* Resultado del sorteo */
 .result-list {
-  margin-bottom: 50px;
   margin-top: 20px;
+  margin-bottom: 50px;
   font-family: "Handjet", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "ELGR" 1, "ELSH" 2;
-  color: #f93827;
+  color: var(--color-primary);
   font-size: 40px;
   font-weight: bold;
   text-align: center;
 }
+.auto-restart-message {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333;
+}
 
-/* Botón de sortear título */
+/* Botón de sortear */
 .button-draw {
   white-space: nowrap;
   display: inline-flex;
@@ -194,13 +206,14 @@ ul {
   background: var(--color-button-hover);
 }
 
+/* Botón de reiniciar */
 .button-reset {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: 15px 40px;
-  color: var(--color-white); /* Texto blanco, ajústalo a tu gusto */
+  color: var(--color-white);
   background: linear-gradient(
     90deg,
     var(--color-button) 0%,
@@ -208,7 +221,7 @@ ul {
   );
   font-size: 16px;
   font-weight: bold;
-  border: none; /* Si prefieres sin borde; de lo contrario, podrías mantener un border: 2px solid #000 */
+  border: none;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -226,28 +239,10 @@ ul {
   color: var(--color-white);
 }
 
-button i {
-  margin-right: 8px;
-  font-size: 30px;
-  color: var(--color-secondary);
-}
-
-/* Estilo del botón cuando está deshabilitado */
+/* Estilo de botones deshabilitados */
 button:disabled {
   background-color: #cccccc;
   color: #666666;
   cursor: not-allowed;
   opacity: 0.6;
-}
-
-/* Estilo del botón habilitado */
-button:not(:disabled) {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:not(:disabled):hover {
-  background-color: var(--color-primary);
 }
