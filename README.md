@@ -30,7 +30,8 @@ Esta aplicación web te permite registrar una lista de amigos, y luego seleccion
 4. El nombre del amigo sorteado se mostrará en la pantalla, reemplazando la lista.
 
 ## Captura de Pantalla
-![image](https://github.com/user-attachments/assets/5ddb27fe-a37a-447d-9134-17edf69f690d)
+![Captura web_13-2-2025_142918_127 0 0 1](https://github.com/user-attachments/assets/a94683d8-bff9-4513-8407-6b20511b7037)
+
 
 ## Mejoras futuras
 
