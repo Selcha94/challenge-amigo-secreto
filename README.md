@@ -52,8 +52,6 @@ Una aplicación web para organizar el juego del Amigo Secreto. Esta herramienta 
    Si se sortean todos los amigos, aparecerá un mensaje indicando que el juego se reiniciará automáticamente en 3 segundos.  
    También puedes usar el botón **Reiniciar Sorteo** para reiniciar manualmente.
 
-## Estructura del Proyecto
-
 
 ## Captura de Pantalla
 ![Captura web_13-2-2025_142918_127 0 0 1](https://github.com/user-attachments/assets/a94683d8-bff9-4513-8407-6b20511b7037)
@@ -65,7 +63,7 @@ Una aplicación web para organizar el juego del Amigo Secreto. Esta herramienta 
 
 * Permitir que el usuario edite los nombres ya agregados en la lista, en caso de errores o cambios.
 
-*Guardar los resultados de los sorteos para que el usuario pueda consultarlos posteriormente o para evitar repetir asignaciones.
+* Guardar los resultados de los sorteos para que el usuario pueda consultarlos posteriormente o para evitar repetir asignaciones.
 
-*Ajustar la interfaz para que se vea y funcione bien en dispositivos móviles, posiblemente implementando un diseño responsive.
+* Ajustar la interfaz para que se vea y funcione bien en dispositivos móviles, posiblemente implementando un diseño responsive.
 
